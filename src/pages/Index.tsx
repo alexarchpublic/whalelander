@@ -1,5 +1,5 @@
 import { EntryForm } from "@/components/EntryForm";
-import { PrizeCard } from "@/components/PrizeCard";
+import { ProductCarousel } from "@/components/ProductCarousel";
 import { Separator } from "@/components/ui/separator";
 
 const Index = () => {
@@ -31,26 +31,10 @@ const Index = () => {
       </section>
 
       {/* Prizes Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-20">
+        <div className="max-w-[100vw] mx-auto">
           <h2 className="text-3xl font-playfair text-center mb-12">Exclusive Prizes</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <PrizeCard
-              title="Rolex Bluesy"
-              description="The iconic Submariner Date in steel and gold, a timeless symbol of luxury."
-              imageUrl="/images/rolex-bluesy.png"
-            />
-            <PrizeCard
-              title="Louis Vuitton Watch Case"
-              description="Travel in style with a luxury watch case."
-              imageUrl="/images/lv-watch-case.png"
-            />
-            <PrizeCard
-              title="$25k Concierge Package"
-              description="Exclusive access to Arch Public's premium concierge program."
-              imageUrl="https://images.unsplash.com/photo-1500375592092-40eb2168fd21"
-            />
-          </div>
+          <ProductCarousel />
         </div>
       </section>
 
