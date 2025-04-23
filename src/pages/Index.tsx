@@ -22,19 +22,18 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Prize Carousel Section */}
+      <section className="py-8">
+        <div className="max-w-[100vw] mx-auto">
+          <ProductCarousel />
+        </div>
+      </section>
+
       {/* Form Section */}
       <section className="py-16 px-6 bg-white/50 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-playfair mb-8">Enter your details below to enter:</h2>
           <EntryForm />
-        </div>
-      </section>
-
-      {/* Prizes Section */}
-      <section className="py-20">
-        <div className="max-w-[100vw] mx-auto">
-          <h2 className="text-3xl font-playfair text-center mb-12">Exclusive Prizes</h2>
-          <ProductCarousel />
         </div>
       </section>
 
