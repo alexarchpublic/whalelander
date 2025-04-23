@@ -16,8 +16,14 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "src": "/api/submit-entry",
+      "methods": ["POST", "OPTIONS"],
+      "dest": "/api/submit-entry.ts"
+    },
+    {
+      "src": "/api/send-confirmation",
+      "methods": ["POST", "OPTIONS"],
+      "dest": "/api/send-confirmation.ts"
     },
     {
       "src": "^/assets/(.*)",
