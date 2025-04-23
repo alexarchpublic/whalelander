@@ -10,10 +10,32 @@ async function initGoogleSheets() {
       hasSpreadsheetId: !!process.env.GOOGLE_SHEETS_SPREADSHEET_ID
     });
 
+    // Properly format the private key
+    let privateKey = process.env.GOOGLE_SHEETS_PRIVATE_KEY || '';
+    
+    // Handle different possible formats of the private key
+    if (privateKey.startsWith('"') && privateKey.endsWith('"')) {
+      privateKey = privateKey.slice(1, -1);
+    }
+    
+    // Replace literal \n with newlines and ensure proper PEM format
+    privateKey = privateKey.replace(/\\n/g, '\n');
+    if (!privateKey.includes('-----BEGIN PRIVATE KEY-----')) {
+      console.error('Private key is not in the correct format');
+      throw new Error('Invalid private key format');
+    }
+
+    console.log('Private key format check:', {
+      startsWithHeader: privateKey.includes('-----BEGIN PRIVATE KEY-----'),
+      endsWithFooter: privateKey.includes('-----END PRIVATE KEY-----'),
+      containsNewlines: privateKey.includes('\n'),
+      length: privateKey.length
+    });
+
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
-        private_key: process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, '\n')
+        private_key: privateKey
       },
       scopes: ['https://www.googleapis.com/auth/spreadsheets']
     });
@@ -21,6 +43,14 @@ async function initGoogleSheets() {
     return google.sheets({ version: 'v4', auth });
   } catch (error) {
     console.error('Error initializing Google Sheets:', error);
+    if (error.opensslErrorStack) {
+      console.error('OpenSSL Error Details:', {
+        stack: error.opensslErrorStack,
+        library: error.library,
+        reason: error.reason,
+        code: error.code
+      });
+    }
     throw error;
   }
 }
