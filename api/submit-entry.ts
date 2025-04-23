@@ -10,16 +10,16 @@ async function initGoogleSheets() {
       hasSpreadsheetId: !!process.env.GOOGLE_SHEETS_SPREADSHEET_ID
     });
 
-    // Properly format the private key
+    // Get and clean the private key
     let privateKey = process.env.GOOGLE_SHEETS_PRIVATE_KEY || '';
     
-    // Handle different possible formats of the private key
-    if (privateKey.startsWith('"') && privateKey.endsWith('"')) {
-      privateKey = privateKey.slice(1, -1);
-    }
+    // Remove surrounding quotes if present (they are in Vercel)
+    privateKey = privateKey.replace(/^["']|["']$/g, '');
     
-    // Replace literal \n with newlines and ensure proper PEM format
+    // Replace escaped newlines with actual newlines
     privateKey = privateKey.replace(/\\n/g, '\n');
+
+    // Validate the key format
     if (!privateKey.includes('-----BEGIN PRIVATE KEY-----')) {
       console.error('Private key is not in the correct format');
       throw new Error('Invalid private key format');
@@ -29,7 +29,9 @@ async function initGoogleSheets() {
       startsWithHeader: privateKey.includes('-----BEGIN PRIVATE KEY-----'),
       endsWithFooter: privateKey.includes('-----END PRIVATE KEY-----'),
       containsNewlines: privateKey.includes('\n'),
-      length: privateKey.length
+      length: privateKey.length,
+      firstLine: privateKey.split('\n')[0],
+      lastLine: privateKey.split('\n').slice(-2)[0] // Get the last non-empty line
     });
 
     const auth = new google.auth.GoogleAuth({
