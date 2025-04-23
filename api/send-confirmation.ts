@@ -2,7 +2,20 @@ import { type VercelRequest, type VercelResponse } from '@vercel/node';
 import sgMail from '@sendgrid/mail';
 
 // Initialize SendGrid
-sgMail.setApiKey(process.env.SENDGRID_API_KEY || '');
+const initSendGrid = () => {
+  try {
+    console.log('Initializing SendGrid with environment variables:', {
+      hasApiKey: !!process.env.SENDGRID_API_KEY,
+      fromEmail: process.env.SENDGRID_FROM_EMAIL || 'noreply@example.com'
+    });
+
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY || '');
+    return sgMail;
+  } catch (error) {
+    console.error('Error initializing SendGrid:', error);
+    throw error;
+  }
+};
 
 export const config = {
   api: {
@@ -39,11 +52,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(400).json({ message: 'Missing required fields' });
     }
 
-    // Log SendGrid configuration
-    console.log('SendGrid Config:', {
-      hasApiKey: !!process.env.SENDGRID_API_KEY,
-      fromEmail: process.env.SENDGRID_FROM_EMAIL || 'noreply@example.com',
-    });
+    // Initialize SendGrid
+    const mailer = initSendGrid();
 
     // Send confirmation email
     const msg = {
@@ -54,7 +64,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       html: `<p>Thank you <strong>${name}</strong> for your entry!</p>`,
     };
 
-    await sgMail.send(msg);
+    await mailer.send(msg);
     console.log('Email sent successfully to:', email);
     return res.status(200).json({ message: 'Confirmation email sent' });
   } catch (error) {
