@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { google } from 'googleapis';
+const { google } = require('googleapis');
 
 // Initialize Google Sheets
 async function initGoogleSheets() {
@@ -26,7 +26,7 @@ async function initGoogleSheets() {
 }
 
 // API configuration
-export const config = {
+module.exports.config = {
   api: {
     bodyParser: true,
   },
@@ -94,4 +94,4 @@ async function handler(req: VercelRequest, res: VercelResponse) {
 }
 
 // Export the handler
-export default handler; 
+module.exports = handler; 

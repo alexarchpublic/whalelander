@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import sgMail from '@sendgrid/mail';
+const sgMail = require('@sendgrid/mail');
 
 // Initialize SendGrid
 async function initSendGrid() {
@@ -18,7 +18,7 @@ async function initSendGrid() {
 }
 
 // API configuration
-export const config = {
+module.exports.config = {
   api: {
     bodyParser: true,
   },
@@ -79,4 +79,4 @@ async function handler(req: VercelRequest, res: VercelResponse) {
 }
 
 // Export the handler
-export default handler; 
+module.exports = handler; 
