@@ -1,8 +1,8 @@
-import { type VercelRequest, type VercelResponse } from '@vercel/node';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 import sgMail from '@sendgrid/mail';
 
 // Initialize SendGrid
-const initSendGrid = () => {
+async function initSendGrid() {
   try {
     console.log('Initializing SendGrid with environment variables:', {
       hasApiKey: !!process.env.SENDGRID_API_KEY,
@@ -15,15 +15,17 @@ const initSendGrid = () => {
     console.error('Error initializing SendGrid:', error);
     throw error;
   }
-};
+}
 
+// API configuration
 export const config = {
   api: {
     bodyParser: true,
   },
 };
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+// API handler
+async function handler(req: VercelRequest, res: VercelResponse) {
   // Log request details
   console.log('Request method:', req.method);
   console.log('Request headers:', req.headers);
@@ -53,7 +55,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     // Initialize SendGrid
-    const mailer = initSendGrid();
+    const mailer = await initSendGrid();
 
     // Send confirmation email
     const msg = {
@@ -74,4 +76,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
-} 
+}
+
+// Export the handler
+export default handler; 

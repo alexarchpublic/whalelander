@@ -1,8 +1,8 @@
-import { type VercelRequest, type VercelResponse } from '@vercel/node';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { google } from 'googleapis';
 
 // Initialize Google Sheets
-const initGoogleSheets = () => {
+async function initGoogleSheets() {
   try {
     console.log('Initializing Google Sheets with environment variables:', {
       hasClientEmail: !!process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
@@ -23,15 +23,17 @@ const initGoogleSheets = () => {
     console.error('Error initializing Google Sheets:', error);
     throw error;
   }
-};
+}
 
+// API configuration
 export const config = {
   api: {
     bodyParser: true,
   },
 };
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+// API handler
+async function handler(req: VercelRequest, res: VercelResponse) {
   // Log request details
   console.log('Request method:', req.method);
   console.log('Request headers:', req.headers);
@@ -61,7 +63,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     // Initialize Google Sheets
-    const sheets = initGoogleSheets();
+    const sheets = await initGoogleSheets();
     const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
 
     console.log('Appending data to Google Sheet:', {
@@ -89,4 +91,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
-} 
+}
+
+// Export the handler
+export default handler; 
