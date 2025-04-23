@@ -19,16 +19,13 @@ const Index = () => {
           <p className="text-xl md:text-2xl mb-8 text-gray-800">
             Win a Rolex, Louis Vuitton Set, and $25,000 Arch Public Concierge Package!
           </p>
-          <p className="text-lg text-gray-600 mb-12">
-            Scan the QR code to enter — exclusive to Whale Pass holders at the BTC Conference in Las Vegas.
-          </p>
         </div>
       </section>
 
       {/* Form Section */}
       <section className="py-16 px-6 bg-white/50 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-playfair mb-8">Enter your details below to claim your entry:</h2>
+          <h2 className="text-3xl font-playfair mb-8">Enter your details below to enter:</h2>
           <EntryForm />
         </div>
       </section>
@@ -41,16 +38,16 @@ const Index = () => {
             <PrizeCard
               title="Rolex Bluesy"
               description="The iconic Submariner Date in steel and gold, a timeless symbol of luxury."
-              imageUrl="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"
+              imageUrl="/images/rolex-bluesy.png"
             />
             <PrizeCard
-              title="Louis Vuitton Travel Set"
-              description="Travel in style with a complete set of luxury luggage."
-              imageUrl="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05"
+              title="Louis Vuitton Watch Case"
+              description="Travel in style with a luxury watch case."
+              imageUrl="/images/lv-watch-case.png"
             />
             <PrizeCard
               title="$25k Concierge Package"
-              description="Exclusive access to Arch Public's premium concierge services."
+              description="Exclusive access to Arch Public's premium concierge program."
               imageUrl="https://images.unsplash.com/photo-1500375592092-40eb2168fd21"
             />
           </div>
@@ -62,7 +59,7 @@ const Index = () => {
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <h2 className="text-2xl font-playfair mb-8">Giveaway Details</h2>
           <p>Winners drawn live on May 29th at the BTC Conference in Las Vegas.</p>
-          <p>The $25,000 Concierge Program winner announced during a private VIP Zoom event with special guest John Deaton.</p>
+          <p>The winners will be announced during a private VIP Zoom event with special guest John Deaton.</p>
           <p className="text-gold font-semibold italic">
             "Good luck, Whale. You're already elite — now it's time to level up."
           </p>

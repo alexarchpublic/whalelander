@@ -61,7 +61,7 @@ async function handler(req: VercelRequest, res: VercelResponse) {
     const msg = {
       to: email,
       from: process.env.SENDGRID_FROM_EMAIL || 'noreply@example.com',
-      subject: 'Entry Confirmation',
+      subject: 'Entry Confirmation - Arch Public Whale Giveaway',
       text: `Thank you ${name} for your entry!`,
       html: `<p>Thank you <strong>${name}</strong> for your entry!</p>`,
     };
