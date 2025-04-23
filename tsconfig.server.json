@@ -7,15 +7,19 @@
     "strict": true,
     "skipLibCheck": true,
     "outDir": "dist",
-    "rootDir": "src",
+    "rootDir": ".",
     "allowJs": true,
     "resolveJsonModule": true,
-    "types": ["node"]
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "ts-node": {
     "esm": true,
     "experimentalSpecifiers": true
   },
-  "include": ["src/server.ts", "src/api/**/*"],
+  "include": ["api/**/*"],
   "exclude": ["node_modules"]
 } 

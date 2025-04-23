@@ -1,8 +1,14 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { type VercelRequest, type VercelResponse } from '@vercel/node';
 import sgMail from '@sendgrid/mail';
 
 // Initialize SendGrid
 sgMail.setApiKey(process.env.SENDGRID_API_KEY || '');
+
+export const config = {
+  api: {
+    bodyParser: true,
+  },
+};
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Log request details
