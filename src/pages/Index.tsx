@@ -7,9 +7,9 @@ const Index = () => {
     <div className="min-h-screen font-inter text-gray-800 relative">
       {/* Animated Background */}
       <div className="fixed inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#F7931A] via-[#FFFFFF] to-[#FDB455] opacity-10 animate-gradient-1 blur-[100px]"></div>
-        <div className="absolute inset-0 bg-gradient-to-tl from-[#F7931A] via-[#FFFFFF] to-[#FDB455] opacity-10 animate-gradient-2 blur-[100px]"></div>
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#F7931A] via-[#FFFFFF] to-[#FDB455] opacity-10 animate-gradient-3 blur-[100px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#F7931A] via-[#FFFFFF] to-[#FDB455] opacity-10 animate-gradient-1 blur-[40px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-tl from-[#F7931A] via-[#FFFFFF] to-[#FDB455] opacity-10 animate-gradient-2 blur-[40px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#F7931A] via-[#FFFFFF] to-[#FDB455] opacity-10 animate-gradient-3 blur-[40px]"></div>
       </div>
 
       {/* Content Container */}

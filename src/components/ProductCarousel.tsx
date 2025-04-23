@@ -33,16 +33,19 @@ export const ProductCarousel = () => {
       if (scrollRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
         
-        // Reset to first set of items when reaching middle
-        if (scrollLeft >= (scrollWidth - clientWidth) / 2) {
-          scrollRef.current.scrollLeft = 0;
+        // Calculate the point at which to reset (75% through the duplicated content)
+        const resetPoint = (scrollWidth - clientWidth) * 0.75;
+        
+        if (scrollLeft >= resetPoint) {
+          // Reset to the first set of items (25% through)
+          scrollRef.current.scrollLeft = (scrollWidth - clientWidth) * 0.25;
         } else {
           scrollRef.current.scrollLeft += 1;
         }
       }
     };
 
-    const intervalId = setInterval(scroll, 40);
+    const intervalId = setInterval(scroll, 30);
     return () => clearInterval(intervalId);
   }, []);
 

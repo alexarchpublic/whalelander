@@ -168,7 +168,7 @@ export const EntryForm = () => {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-gold hover:bg-gold-light text-white"
+          className="w-full bg-[#F7931A] hover:bg-[#FDB455] text-white font-medium py-2"
         >
           {isSubmitting ? "Submitting..." : "Submit Entry"}
         </Button>
