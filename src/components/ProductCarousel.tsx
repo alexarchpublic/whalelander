@@ -42,40 +42,42 @@ export const ProductCarousel = () => {
       }
     };
 
-    const intervalId = setInterval(scroll, 40); // Slightly slower scroll
+    const intervalId = setInterval(scroll, 40);
     return () => clearInterval(intervalId);
   }, []);
 
   return (
-    <div className="w-full overflow-hidden bg-white/50 backdrop-blur-sm py-12">
+    <div className="w-full overflow-hidden py-12">
       <div 
         ref={scrollRef}
-        className="flex gap-12 overflow-x-hidden whitespace-nowrap" // Increased gap
+        className="flex gap-16 overflow-x-hidden whitespace-nowrap"
         style={{ scrollBehavior: 'smooth' }}
       >
         {allProducts.map((product, index) => (
           <div
             key={`${product.title}-${index}`}
-            className="inline-flex flex-col min-w-[400px] max-w-[500px]" // Larger cards
+            className="inline-flex flex-col min-w-[400px] max-w-[500px]"
           >
             <a 
               href={product.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+              className="group"
             >
-              <div className="aspect-square overflow-hidden bg-white">
+              <div className="aspect-square overflow-hidden">
                 <img
                   src={product.imageUrl}
                   alt={product.title}
-                  className="w-full h-full object-contain p-4" // Changed to contain and added padding
+                  className="w-full h-full object-contain"
                 />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-black/80 text-white p-6 transform translate-y-[calc(100%-4rem)] group-hover:translate-y-0 transition-transform duration-300">
-                <h3 className="text-xl font-bold mb-2">{product.title}</h3>
-                <p className="text-md font-semibold text-gold mb-2">{product.description}</p>
-                <p className="text-sm opacity-90 leading-relaxed">{product.details}</p>
-                <div className="mt-4 text-sm text-gold/90 hover:text-gold">
+              <div className="text-center mt-6 space-y-2">
+                <h3 className="text-lg font-light tracking-wide">{product.title}</h3>
+                <p className="text-sm font-light text-gray-600">{product.description}</p>
+                <p className="text-xs font-light text-gray-500 max-w-[80%] mx-auto leading-relaxed">
+                  {product.details}
+                </p>
+                <div className="text-xs text-gold mt-4 font-light tracking-wider">
                   View on official website →
                 </div>
               </div>
