@@ -15,10 +15,16 @@ const products: Product[] = [
     link: "https://www.rolex.com/en-us/watches/submariner/m126613lb-0002"
   },
   {
-    title: "Louis Vuitton Watch Case",
-    description: "Monogram canvas 3-watch case with microfiber lining",
-    imageUrl: "/images/lv-watch-case.png",
-    link: "https://us.louisvuitton.com/eng-us/products/3-watch-case-monogram-canvas-000727/M47530"
+    title: "Louis Vuitton 8 Watch Case",
+    description: "Monogram canvas trunk-style case with luxurious microfiber lining",
+    imageUrl: "/images/lv-8-watch-case.png",
+    link: "https://us.louisvuitton.com/eng-us/products/8-watch-case-monogram-canvas/M47530"
+  },
+  {
+    title: "Louis Vuitton Trunk",
+    description: "Classic Monogram canvas trunk with brass hardware",
+    imageUrl: "/images/lv-trunk.png",
+    link: "https://us.louisvuitton.com/eng-us/products/trunk-monogram-canvas/M20013"
   }
 ];
 
