@@ -62,6 +62,48 @@ const Index = () => {
           </div>
         </section>
 
+        {/* About Arch Public & Case Study Section */}
+        <section className="py-16 px-6 bg-gray-50">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <h2 className="text-2xl font-playfair mb-4 text-gray-900">About Arch Public</h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              <span className="font-semibold text-[#F7931A]">Arch Public</span> is a leader in algorithmic Bitcoin yield generation, empowering investors to grow their Bitcoin holdings without ever giving up custody or locking up their assets. Our proprietary Arbitrage Algorithm delivers industry-leading cash yields while keeping your Bitcoin safe and accessible at all times.
+            </p>
+            <div className="flex flex-col md:flex-row justify-center gap-8 mt-8">
+              <div className="flex-1 bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                <h3 className="text-xl font-semibold mb-2 text-gray-900">Why Choose Our Arbitrage Algorithm?</h3>
+                <ul className="text-left text-gray-700 space-y-2 text-base mx-auto max-w-xs">
+                  <li><span className="font-semibold text-[#F7931A]">Full Custody:</span> Your Bitcoin always remains in your control.</li>
+                  <li><span className="font-semibold text-[#F7931A]">Zero Lockup:</span> No need to lock your assets—withdraw anytime.</li>
+                  <li><span className="font-semibold text-[#F7931A]">Superior Returns:</span> Outperforms traditional buy & hold strategies, even in bear markets.</li>
+                </ul>
+              </div>
+              <div className="flex-1 bg-white rounded-xl shadow-lg p-6 border border-gray-200 flex flex-col items-center justify-center">
+                <h3 className="text-xl font-semibold mb-4 text-gray-900">Case Study Results</h3>
+                <div className="grid grid-cols-2 gap-4 w-full max-w-xs">
+                  <div className="bg-gray-100 rounded-lg p-4">
+                    <div className="text-xs text-gray-500">Initial Capital</div>
+                    <div className="text-xl font-bold text-gray-900">$100,000</div>
+                  </div>
+                  <div className="bg-gray-100 rounded-lg p-4">
+                    <div className="text-xs text-gray-500">Final Portfolio Value</div>
+                    <div className="text-xl font-bold text-[#22c55e]">$244,372</div>
+                  </div>
+                  <div className="bg-gray-100 rounded-lg p-4">
+                    <div className="text-xs text-gray-500">CAGR</div>
+                    <div className="text-xl font-bold text-[#22c55e]">25.77%</div>
+                  </div>
+                  <div className="bg-gray-100 rounded-lg p-4">
+                    <div className="text-xs text-gray-500">Annual Yield (APY)</div>
+                    <div className="text-xl font-bold text-[#22c55e]">20.32%</div>
+                  </div>
+                </div>
+                <div className="mt-4 text-sm text-gray-600">No lockup. No loss of custody. Just superior Bitcoin yield.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Legal Section */}
         <section className="py-16 px-6">
           <div className="max-w-3xl mx-auto">
