@@ -1,7 +1,7 @@
 import { EntryForm } from "@/components/EntryForm";
 // import { ProductCarousel } from "@/components/ProductCarousel";
 import { Separator } from "@/components/ui/separator";
-import { ThreeGiftShowcase } from "@/components/ThreeGiftShowcase";
+import { ThreeGiftShowcase } from "../components/ThreeGiftShowcase";
 
 const Index = () => {
   return (
