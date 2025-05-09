@@ -44,10 +44,10 @@ const Index = () => {
             muted
             playsInline
             className="w-full max-w-4xl h-auto object-cover rounded-lg shadow-lg"
-            poster="/images/Rolex 1.jpg"
+            poster="/images/Rolex-1.jpg"
           >
-            <source src="/images/Rolex v1.webm" type="video/webm" />
-            <source src="/images/Rolex v1.mp4" type="video/mp4" />
+            <source src="/images/Rolex-v1.webm" type="video/webm" />
+            <source src="/images/Rolex-v1.mp4" type="video/mp4" />
             Sorry, your browser doesn't support embedded videos. Please use Chrome, Safari, or Firefox.
           </video>
         </section>

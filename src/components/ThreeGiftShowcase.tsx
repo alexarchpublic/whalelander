@@ -5,22 +5,22 @@ const gifts = [
     title: "Rolex Submariner Date",
     description: "41mm Oystersteel and yellow gold with blue ceramic bezel.",
     images: [
-      "/images/Rolex 1.jpg",
-      "/images/Rolex 2.jpg"
+      "/images/Rolex-1.jpg",
+      "/images/Rolex-2.jpg"
     ]
   },
   {
     title: "Louis Vuitton Luggage",
     description: "Classic Monogram canvas trunk with brass hardware.",
     images: [
-      "/images/Louis Vuitton Luggage 1.jpg"
+      "/images/Louis-Vuitton-Luggage-1.jpg"
     ]
   },
   {
     title: "Louis Vuitton 8 Watch Case",
     description: "Monogram canvas trunk-style case with luxurious microfiber lining.",
     images: [
-      "/images/Louis Vuitton Watch Case 1.jpg"
+      "/images/Louis-Vuitton-Watch-Case-1.jpg"
     ]
   }
 ];
