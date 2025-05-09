@@ -57,7 +57,7 @@ export const ThreeGiftShowcase = () => {
           key={gift.title}
           className="flex-1 bg-white rounded-xl shadow-lg p-6 border border-gray-200 flex flex-col items-center"
         >
-          <div className="aspect-square w-full max-w-xs mb-4 overflow-hidden rounded-lg flex items-center justify-center bg-gray-50">
+          <div className="aspect-video w-full max-w-xs mb-4 overflow-hidden rounded-lg flex items-center justify-center bg-gray-50">
             {isVideo(gift.images[indices[i]]) ? (
               <video
                 src={gift.images[indices[i]]}
