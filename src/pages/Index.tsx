@@ -39,7 +39,6 @@ const Index = () => {
         {/* Promo Video Section */}
         <section className="w-full flex justify-center items-center bg-black">
           <video
-            src="/images/Rolex v1.mov"
             autoPlay
             loop
             muted
@@ -47,9 +46,10 @@ const Index = () => {
             className="w-full max-w-4xl h-auto object-cover rounded-lg shadow-lg"
             poster="/images/Rolex 1.jpg"
           >
+            <source src="/images/Rolex v1.webm" type="video/webm" />
+            <source src="/images/Rolex v1.mp4" type="video/mp4" />
             Sorry, your browser doesn't support embedded videos. Please use Chrome, Safari, or Firefox.
           </video>
-          {/* TODO: For best performance and compatibility, use .mp4 or .webm format. */}
         </section>
 
         {/* Three Gift Showcase Section */}
