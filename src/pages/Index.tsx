@@ -1,6 +1,7 @@
 import { EntryForm } from "@/components/EntryForm";
-import { ProductCarousel } from "@/components/ProductCarousel";
+// import { ProductCarousel } from "@/components/ProductCarousel";
 import { Separator } from "@/components/ui/separator";
+import { ThreeGiftShowcase } from "@/components/ThreeGiftShowcase";
 
 const Index = () => {
   return (
@@ -35,10 +36,26 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Prize Carousel Section */}
+        {/* Promo Video Section */}
+        <section className="w-full flex justify-center items-center bg-black">
+          <video
+            src="/images/Rolex v1.mov"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full max-w-4xl h-auto object-cover rounded-lg shadow-lg"
+            poster="/images/Rolex 1.jpg"
+          >
+            Sorry, your browser doesn't support embedded videos. Please use Chrome, Safari, or Firefox.
+          </video>
+          {/* TODO: For best performance and compatibility, use .mp4 or .webm format. */}
+        </section>
+
+        {/* Three Gift Showcase Section */}
         <section className="py-8">
-          <div className="max-w-[100vw] mx-auto">
-            <ProductCarousel />
+          <div className="max-w-6xl mx-auto">
+            <ThreeGiftShowcase />
           </div>
         </section>
 
