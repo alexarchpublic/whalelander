@@ -62,8 +62,26 @@ async function handler(req: VercelRequest, res: VercelResponse) {
       to: email,
       from: process.env.SENDGRID_FROM_EMAIL || 'noreply@example.com',
       subject: 'Entry Confirmation - Arch Public Whale Giveaway',
-      text: `Thank you ${name} for your entry!`,
-      html: `<p>Thank you <strong>${name}</strong> for your entry!</p>`,
+      text: `Congratulations! You've secured your entry into our extraordinary giveaway. One lucky winner will take home a Rolex, Louis Vuitton luggage, an Louis Vuitton watch case, a $25,000 Arch Public Crypto Concierge Lifetime Membership, and - to cap it off - a bottle of Dom Pérignon.
+
+As a valued participant, you're now part of our elite circle of Whales, whom we're thrilled to connect with. During the conference (May 27–29), expect personalized communications from us with exclusive invitations to private events hosted by Arch Public. These events are crafted to offer unparalleled speakers, networking opportunities, and insights tailored to your interests.
+
+We're excited to build a relationship with you. If you have any questions or wish to connect with our team before/during the conference, reach out to Daniel (daniel@thearchpublic.com).
+
+Thank you for joining us, and we look forward to seeing you at Bitcoin 2025!
+
+Best regards,
+The Arch Public Team`,
+      html: `<p>Congratulations! You've secured your entry into our extraordinary giveaway. One lucky winner will take home a Rolex, Louis Vuitton luggage, an Louis Vuitton watch case, a $25,000 Arch Public Crypto Concierge Lifetime Membership, and - to cap it off - a bottle of Dom Pérignon.</p>
+
+<p>As a valued participant, you're now part of our elite circle of Whales, whom we're thrilled to connect with. During the conference (May 27–29), expect personalized communications from us with exclusive invitations to private events hosted by Arch Public. These events are crafted to offer unparalleled speakers, networking opportunities, and insights tailored to your interests.</p>
+
+<p>We're excited to build a relationship with you. If you have any questions or wish to connect with our team before/during the conference, reach out to Daniel (<a href="mailto:daniel@thearchpublic.com">daniel@thearchpublic.com</a>).</p>
+
+<p>Thank you for joining us, and we look forward to seeing you at Bitcoin 2025!</p>
+
+<p>Best regards,<br>
+The Arch Public Team</p>`,
     };
 
     await mailer.send(msg);
